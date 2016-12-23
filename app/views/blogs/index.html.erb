@@ -3,7 +3,7 @@
     <p><%= notice %></p>
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
     <h1>ブログ一覧</h1>
-    <%= @blogs.each do |blog| %>
+    <% @blogs.each do |blog| %>
     <div class= "row">
       <h4><strong><%= blog.title %></strong></h4>
       <p><%= blog.content %></p>
