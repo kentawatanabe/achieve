@@ -3,7 +3,6 @@
   <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
-
       <ul>
       <% @blog.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
