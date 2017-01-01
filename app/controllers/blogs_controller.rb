@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  
   before_action :authenticate_user!
   before_action :set_blog, only: [:edit, :update, :destroy]
  
@@ -13,34 +14,35 @@ class BlogsController < ApplicationController
       @blog = Blog.new
     end
   end
+  
   def create
     @blog = Blog.new(blogs_params)
-   if @blog.save
-    redirect_to blogs_path, notice: "ブログを作成しました！"
-   else
-    render 'new'
-   end
+    if @blog.save
+      redirect_to blogs_path, notice: "ブログを作成しました！"
+    else
+      render :new
+    end
   end
   
   def edit
   end
   
  def update 
-   if @blog.update(blogs_params)
-   redirect_to blogs_path, notice: "ブログを更新しました！"
-   else 
-    render 'edit'
-   end
+    if @blog.update(blogs_params)
+      redirect_to blogs_path, notice: "ブログを更新しました！"
+    else 
+      render :edit
+    end
  end
   
   def destroy
-  @blog.destroy
-  redirect_to blogs_path, notice: "ブログを削除しました！"
+    @blog.destroy
+    redirect_to blogs_path, notice: "ブログを削除しました！"
   end
   
   def confirm
-      @blog = Blog.new(blogs_params)
-      render :new if @blog.invalid?
+    @blog = Blog.new(blogs_params)
+    render :new if @blog.invalid?
   end
   
   private

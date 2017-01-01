@@ -1,40 +1,41 @@
 .wrapper{
-    margin-bottom: 74px;
-    padding: 20px 20px 20px 35px;
-    .row{
-        border-bottom: 1px solid #ccc;
-        padding: 20px;
-        text-align: left;
-        word-wrap: break-word;
+  margin-bottom: 74px;
+  padding: 20px 20px 20px 35px;
+  .row{
+      border-bottom: 1px solid #ccc;
+      padding: 20px;
+      text-align: left;
+      word-wrap: break-word;
     }
-}
+}  
+
 input[type="submit"].btn-block{
-    margin: 15px 0;
+  margin: 15px 0;
 }
+
 .container{
-    padding-bottom: 85px;
+  padding-bottom: 85px;
 }
+
 .page-top-btn{
-    display: none;
-    border-radius: 50px;
-    background: #336699;
-    width: 60px;
-    height: 60px;
-    transition: all 0.3s;
-    cursor: pointer;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
+  display: none;
+  border-radius: 50px;
+  background: #336699;
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
     a{
-        display: block;
-        color: white;
-        line-height: 60px;
-        text-decoration: none;
-     }
+      display: block;
+      color: white;
+      line-height: 60px;
+      text-decoration: none;
+    }
     &:hover{
-        opacity: 0.7;
+      opacity: 0.7;
     }
 }
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
