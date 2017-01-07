@@ -4,9 +4,10 @@ header{
   height:54px;
 }
 
-.flash{ 
-  color: white;
-  padding-top: 10px;
+.flash{
+    color: white;
+    z-index: 999;
+    padding-top: 10px;
 }
 
 .navbar-default{
