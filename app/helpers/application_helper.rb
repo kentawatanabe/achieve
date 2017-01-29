@@ -24,7 +24,7 @@ module ActionView
     end
 
     class FormBuilder
-      def error_messages?(options ={})
+      def error_messages!(options ={})
         @template.error_messages!(@object_name, options.merge(object: @object))
       end
 
