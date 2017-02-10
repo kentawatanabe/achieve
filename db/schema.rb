@@ -60,10 +60,7 @@ ActiveRecord::Schema.define(version: 20170208070139) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-<<<<<<< HEAD
   add_index "users", ["uid","provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
-=======
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
->>>>>>> 72e45ffc60ce0af45f2b8521bb298900c406577d
+
 
 end
