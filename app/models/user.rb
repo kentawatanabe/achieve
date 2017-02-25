@@ -52,4 +52,13 @@ class User < ActiveRecord::Base
       update_without_password(params, *options)
     end
   end
+
+  # def self.user.profile(id)
+  #   user = User.find(params[:id])
+  #   put "user.name","user.email"
+  def profile(point)
+    return point
+    puts "name #{self.name}, #{self.email}, #{point}"
+  end
+
 end
