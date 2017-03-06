@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
@@ -52,4 +53,13 @@ class User < ActiveRecord::Base
       update_without_password(params, *options)
     end
   end
+
+  # def self.user.profile(id)
+  #   user = User.find(params[:id])
+  #   put "user.name","user.email"
+  def profile(point)
+    return point
+    puts "name #{self.name}, #{self.email}, #{point}"
+  end
+
 end

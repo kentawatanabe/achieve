@@ -5,7 +5,9 @@
     <h1>ブログ一覧</h1>
     <% @blogs.each do |blog| %>
       <div class= "row">
+        <%= link_to blog_path(blog) do %>
         <h4><strong><%= blog.title %></strong></h4>
+        <% end %>
         <p><%= blog.content %></p>
         <p><%= blog.user.name %></p>
         <div class= "profile_img">
