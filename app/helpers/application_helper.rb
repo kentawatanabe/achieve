@@ -6,7 +6,6 @@ module ApplicationHelper
     else
       img_url = 'no_image.png'
     end
-    binding.pry
     image_tag(img_url, alt: user.name)
   end
 end
