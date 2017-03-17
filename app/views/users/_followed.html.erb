@@ -1,0 +1,9 @@
+<h4><%= "フォロワー" %><h4>
+<% user.each do |user| %>
+  <%= link_to user_path(user) do %>
+    <%= user.name %>
+  <% end %>
+  <div class = "profile_image">
+    <%= profile_img(user) %>
+  </div>
+<% end %>
