@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
       @messages = @messages[-10..-1]
     end
 
-    if params[:m]
+    if params[:yamada]
       over_ten = false
       @messages = @conversation.messages
     end
@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
   def create
     @message = @conversation.messages.build(message_params)
     if @message.save
-      redirect_to conversation_messages_path(@message)
+      redirect_to conversation_messages_path(@conversation)
     end
   end
 

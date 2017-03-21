@@ -1,6 +1,7 @@
 <div class = "container">
   <h2>ユーザー</h2>
   <% @users.each do |user| %>
+  <% if user.id != current_user.id %>
     <div class= "container-child col-md-4 col-sm-4 col-xs-6">
       <h1><%=""%></h1>
       <%= link_to user_path(user) do %>
@@ -9,7 +10,13 @@
       <div class = "profile_image">
         <%= profile_img(user) %>
       </div>
-      <%= render 'follow_form', user: user %>
+        <li>
+          <div class = "item">
+            <%= link_to "メッセージ", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
+          </div>
+          <%= render 'follow_form', user: user %>
+        </li>
+      <% end %>
     </div>
   <% end %>
 </div>
