@@ -41,7 +41,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" >
         <% if user_signed_in? %>
-          <%= link_to notifications_index_path do %>
+          <%= link_to notifications_index_path, class: "navbar-brand" do %>
             <i class= "fa fa-bell fa-1x"><span id= "urnread_count"><%= @notifications_count %></i>
           <% end %>
         <% end %>
