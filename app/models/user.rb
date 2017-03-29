@@ -74,8 +74,7 @@ class User < ActiveRecord::Base
   #   user = User.find(params[:id])
   #   put "user.name","user.email"
   def profile(point)
-    return point
-    puts "name #{self.name}, #{self.email}, #{point}"
+    puts "name #{self.name}, uuu#{self.email}, #{point}"
   end
 
 end

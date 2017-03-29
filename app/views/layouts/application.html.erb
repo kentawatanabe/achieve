@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src = "https://js.pusher.com/3.2/pusher.min.js"></script>
   <title>Achieve</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
+  <% if user_signed_in? %>
+    <script>
+      var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',{
+        encrypted: true
+      });
+      var channel = pusher.subscribe('user_<%=current_user.id %>_channel');
+      channel.bind('comment_created', function(data){
+        alert(data.message);
+      });
+      channel.bind('notification_created', function(data){
+        $('#unread_count').html(data.unread_counts);
+      });
+    </script>
+  <% end %>
 </head>
 <body>
 
@@ -25,6 +40,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" >
+        <% if user_signed_in? %>
+          <%= link_to notifications_index_path do %>
+            <i class= "fa fa-bell fa-1x"><span id= "urnread_count"><%= @notifications_count %></i>
+          <% end %>
+        <% end %>
+
         <li><%= link_to "お問い合わせ", new_contact_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
